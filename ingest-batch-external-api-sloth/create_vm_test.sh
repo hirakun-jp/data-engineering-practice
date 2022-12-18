@@ -5,7 +5,7 @@ gcloud iam service-accounts create ${VM_SERVICE_ACCOUNT_NAME_TEST} \
     --display-name=${VM_SERVICE_ACCOUNT_NAME_TEST}
 
 # grant the service account an IAM role
-gcloud projects add-iam-policy-binding PROJECT_ID \
+gcloud projects add-iam-policy-binding ${GCP_PROJECT_ID} \
     --member="serviceAccount:${VM_SERVICE_ACCOUNT_EMAIL_TEST}" \
     --role="roles/storage.admin"
 
