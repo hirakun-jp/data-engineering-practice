@@ -1,8 +1,4 @@
 #!/bin/bash
-#
-# cd ~/data-engineering-practice/ingest-batch-external-api-sloth
-# chmod +x delete_all_test.sh
-# ./delete_all_test.sh
 
 # delete the instane schedule
 printf 'yes' | \
@@ -19,6 +15,11 @@ gcloud compute resource-policies delete ${VM_SCHEDULE_NAME_TEST} \
 printf 'yes' | \
 gcloud compute instances delete ${VM_NAME_TEST} \
     --zone ${VM_ZONE_ID}
+
+# delete the service account
+printf 'yes' | \
+gcloud iam service-accounts delete \
+    ${VM_SERVICE_ACCOUNT_EMAIL_TEST}
 
 # delete the router config
 printf 'yes' | \
