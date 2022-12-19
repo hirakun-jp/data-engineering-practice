@@ -28,4 +28,4 @@ gcloud compute instances create ${VM_NAME_TEST} \
     --tags ${IAP_NETWORK_TAG} \
     --no-address \
     --resource-policies=${VM_SCHEDULE_NAME_TEST} \
-    --metadata=startup-script=startup-script.sh
+    --metadata-from-file=startup-script=startup-script.sh
