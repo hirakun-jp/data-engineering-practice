@@ -21,7 +21,7 @@ gcloud compute instances create ${VM_NAME_TEST} \
     --machine-type=e2-micro \
     --provisioning-model=STANDARD \
     --service-account=${VM_SERVICE_ACCOUNT_EMAIL_TEST} \
-    --scopes https://www.googleapis.com/auth/cloud-platform
+    --scopes https://www.googleapis.com/auth/cloud-platform \
     --network ${VM_NETWORK} \
     --subnet ${VM_SUBNET} \
     --zone ${VM_ZONE_ID} \
