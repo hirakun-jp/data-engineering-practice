@@ -9,6 +9,10 @@ gcloud projects add-iam-policy-binding ${GCP_PROJECT_ID} \
     --member="serviceAccount:${VM_SERVICE_ACCOUNT_EMAIL_TEST}" \
     --role="roles/storage.admin"
 
+gcloud projects add-iam-policy-binding ${GCP_PROJECT_ID} \
+    --member="serviceAccount:${VM_SERVICE_ACCOUNT_EMAIL_TEST}" \
+    --role="roles/monitoring.metricWriter"
+
 # create the instance schedule
 gcloud compute resource-policies create instance-schedule ${VM_SCHEDULE_NAME_TEST} \
     --vm-start-schedule="${VM_SCHEDULE_START_OPERATION}" \
